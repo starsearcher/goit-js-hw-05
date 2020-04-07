@@ -3,7 +3,10 @@ class Car {
         console.log(`maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`);
     }
 
-    constructor({ maxSpeed, speed = 0, isOn = false, distance = 0, price }) {
+    constructor({ maxSpeed, price }) {
+        let speed = 0;
+        let isOn = false;
+        let distance = 0;
         this.maxSpeed = maxSpeed;
         this.speed = speed;
         this.isOn = isOn;
@@ -46,7 +49,6 @@ class Car {
             this.speed = 0;
             console.log(`The car has stopped`);
         } else if (value < 0) {
-            value = 0;
             console.log('Decelerator must be a positive value');
         } else {
             this.speed -= value;
@@ -54,7 +56,7 @@ class Car {
     }
 
     drive(hours) {
-        if ((this.isOn = true)) {
+        if (this.isOn == true) {
             this.distance += hours * this.speed;
         } else console.log('Please, turn on the car!');
         return this.distance;
