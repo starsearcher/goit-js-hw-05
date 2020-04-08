@@ -4,13 +4,10 @@ class Car {
     }
 
     constructor({ maxSpeed, price }) {
-        let speed = 0;
-        let isOn = false;
-        let distance = 0;
         this.maxSpeed = maxSpeed;
-        this.speed = speed;
-        this.isOn = isOn;
-        this.distance = distance;
+        this.speed = 0;
+        this.distance = 0;
+        this.isOn = false;
         this._price = price;
     }
 
@@ -56,7 +53,7 @@ class Car {
     }
 
     drive(hours) {
-        if (this.isOn == true) {
+        if (this.isOn) {
             this.distance += hours * this.speed;
         } else console.log('Please, turn on the car!');
         return this.distance;
